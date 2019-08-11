@@ -1,0 +1,37 @@
+---
+output:
+  html_document: default
+  pdf_document: default
+---
+#Quick Sports Analysis in R
+
+##by Ian Riaf
+
+```{r, echo=FALSE}
+knitr::opts_chunk$set(error = TRUE)
+```
+
+**Part 1 ** 
+
+```{r}
+
+load(file="SportsData.RData")
+summary(SportsData)
+plots(SportsData$`P2+`,SportsData$`P50+`)
+model = lm(SportsData$`P2+~SportsData$`P50+`)
+summary(model)
+```
+
+**Part2**
+
+```{r}
+plot(SportsData$`P2+`,SportsData$`P34-49`)
+boxplot(SportsData$`P2+`)
+boxplot(SportsData$`P34-49`)
+
+```
+
+The mean of P2+ Viewership was 'r mean(SportsData.RData$`P2+`).
+
+
+#DATA FROM ... Source
